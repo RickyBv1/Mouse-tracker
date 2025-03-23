@@ -20,6 +20,14 @@ const FollowMouse = () => {
     };
   }, [enabled]);
 
+  useEffect(() => {
+    document.body.classList.toggle("no-cursor", enabled);
+
+    return () => {
+      document.body.classList.remove("no-cursor");
+    }
+  })
+
   return (
     <>
       <div
